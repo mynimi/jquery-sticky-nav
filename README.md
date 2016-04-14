@@ -19,7 +19,7 @@ Check out the minimal example below.
     <body>
         <!-- header -->
         <header>
-            <h1>My awesom header</h1>
+            <h1>My awesome header</h1>
         </header>
 
         <!-- navigation -->
