@@ -1,0 +1,60 @@
+<h1 id="jquery-stickynav">jquery.stickyNav</h1>
+<p>a lightweight(1KB) jquery plugin to create a true sticky navbar</p>
+<h2 id="what-does-it-do-">What does it do?</h2>
+<p>This is a very simple plugin to make navbars sticky, without any visible jump as the state of the navbar changes.</p>
+<h2 id="how-do-you-use-it-">How do you use it?</h2>
+<p>You want to include jQuery, then this plugin within your page and then call it upon the nav you want to make sticky.</p>
+<p>Check out the minimal example below.</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;title&gt;Your Page&lt;/title&gt;
+        &lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- header --&gt;
+        &lt;header&gt;
+            &lt;h1&gt;My awesom header&lt;/h1&gt;
+        &lt;/header&gt;
+
+        &lt;!-- navigation --&gt;
+        &lt;nav class=&quot;my-navigation&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Item&lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;Item&lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;Item&lt;/a&gt;
+        &lt;/nav&gt;
+        &lt;!-- /navigation --&gt;
+
+        &lt;!-- whatever other code you use --&gt;
+
+        &lt;!-- jQuery --&gt;
+        &lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+        &lt;!-- jQuery Sticky Nav --&gt;
+        &lt;script src=&quot;js/jquery.stickyNav.min.js&quot;&gt;&lt;/script&gt;
+        &lt;!-- initiate sticky nav --&gt;
+        &lt;script&gt;
+            $(&#39;.my-navigation&#39;).stickyNav();
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="how-does-it-work-">How does it work?</h2>
+<p>the plugin will measure the height of your navigation and then create a placeholder element of the exact same height behind the navigation.</p>
+<p>Then as soon as the top of the element has reached the top of the window, the position of the navbar will be changed to fixed, while the placeholder element remains in place.</p>
+<p>This will ensure that you won&#39;t see a visible little &quot;jump&quot;, which sometimes happens with other solutions.</p>
+<h2 id="are-there-any-options-">Are there any options?</h2>
+<p>Yes, the options you can pass are</p>
+<p><strong>wrapperClass</strong>: the navbar will be wrapped, this is the class added to the element. Default is <em>&#39;sticky-nav-wrapper&#39;</em>.</p>
+<p><strong>placeholderClass</strong>: the class of the placeholder element. Default is <em>&#39;sticky-nav-placeholder&#39;</em>.</p>
+<p><strong>elementClass</strong> the sticky element itself will get a new class. Default is <em>&#39;sticky-nav-element&#39;</em>.</p>
+<p><strong>zIndexValue</strong> the element will get a z-index value. The default is <em>10</em> you might want to amp it up a little maybe.</p>
+<p>Options are passed like this:</p>
+<pre><code class="lang-js">$(&#39;.my-navigation&#39;).stickyNav({
+    wrapperClass: &#39;sticky-wrapper&#39;,
+    placeholderClass: &#39;sticky-placeholder&#39;,
+    elementClass: &#39;sticky-element&#39;,
+    zIndexValue: 99
+});
+</code></pre>
+<h2 id="questions-problems-enhancements">questions, problems, enhancements</h2>
+<p>Just open an issue and let me know.</p>
